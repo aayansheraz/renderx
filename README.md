@@ -1,6 +1,19 @@
 # RenderX — Premium Creative Agency
 
-A landing site for a creative/design agency concept: hero page with background video, a services showcase, per-service detail pages, and a contact page. Built with React 19 + TypeScript + Vite + Tailwind CSS v4 + Framer Motion (via `motion/react`) + React Router.
+**[Live demo →](https://aayansheraz.github.io/renderx/)**
+
+![RenderX screenshot](.github/screenshot.png)
+
+A landing site for a creative/design agency concept: a background-video hero with a gradient typewriter headline, a services showcase, per-service detail pages, and a contact page.
+
+Built with **React 19 + TypeScript + Vite + Tailwind CSS v4 + Framer Motion (via `motion/react`) + React Router**.
+
+## Highlights
+
+- Full-screen video hero with an animated gradient typewriter headline
+- Service picker that routes to animated detail pages — web development, video editing, graphic design, AI automations
+- Route-level page transitions powered by Motion
+- 100% static output — deploys to any static host
 
 ## Run locally
 
