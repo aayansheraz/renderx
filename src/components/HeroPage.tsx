@@ -1,21 +1,14 @@
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { ServiceSelector } from './ServiceSelector';
 
 export function HeroPage() {
-  const navigate = useNavigate();
   const { displayed, done } = useTypewriter("we render the\nfuture of digital.", 38, 600);
-
-  const handleConfirmService = (service: string) => {
-    const slug = service.toLowerCase().replace(/\s+/g, '-');
-    navigate(`/services/${slug}`);
-  };
 
   return (
     <main
       id="spade-hero"
-      className="w-full max-w-7xl mx-auto px-6 flex flex-col justify-center h-screen pt-24 sm:pt-28 lg:pt-32 relative"
+      className="w-full max-w-7xl mx-auto px-6 flex flex-col justify-center h-screen pt-20 sm:pt-24 lg:pt-28 relative"
     >
       {/* Immersive ambient glows styled as hardware-friendly radial gradients (no slow blur filters) */}
       <motion.div
@@ -62,7 +55,7 @@ export function HeroPage() {
         transition={{ duration: 0.6 }}
         className="w-full"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] mb-8 select-none w-full whitespace-pre-wrap">
+        <h1 className="text-5xl md:text-6xl lg:text-[76px] font-extrabold tracking-tight leading-[1.08] mb-6 select-none w-full whitespace-pre-wrap">
           <span className="bg-gradient-to-r from-fuchsia-400 via-purple-300 to-cyan-300 bg-clip-text text-transparent filter drop-shadow-[0_2px_15px_rgba(217,70,239,0.15)]">
             {displayed}
           </span>
@@ -79,14 +72,13 @@ export function HeroPage() {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="w-full"
       >
-        <p className="text-lg md:text-xl text-neutral-300 leading-relaxed font-normal mb-14 max-w-2xl drop-shadow-xs">
-          We craft immersive web experiences, high-production video stories, <br />
-          tailored graphic branding, and autonomous AI system logic.
+        <p className="text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed font-normal mb-8 max-w-3xl drop-shadow-xs">
+          A full-service creative agency helping brands grow through impactful design, strategic branding, high-performance marketing, compelling video content, and modern digital solutions. We combine creativity with strategy to build experiences that drive attention, engagement, and measurable results.
         </p>
       </motion.div>
 
       {/* Service selector */}
-      <ServiceSelector onConfirm={handleConfirmService} />
+      <ServiceSelector />
     </main>
   );
 }

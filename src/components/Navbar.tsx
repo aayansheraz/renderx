@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
+const navItems = [
+  { label: 'Home', id: 'home' },
+  { label: 'Services', id: 'services' },
+  { label: 'Why Us', id: 'why-choose-us' },
+  { label: 'Contact', id: 'contact' }
+];
+
 export function Navbar() {
-  const navigate = useNavigate();
-  const location = useLocation();
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
   const [prevScrollY, setPrevScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,42 +28,29 @@ export function Navbar() {
         setIsNavbarVisible(true);
       }
       setPrevScrollY(currentScrollY);
+
+      // Scroll spy: highlight the section currently in view
+      const probe = window.innerHeight * 0.4;
+      let current = 'home';
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
+        if (el && el.getBoundingClientRect().top <= probe) {
+          current = item.id;
+        }
+      }
+      setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollY]);
 
-  const navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Services', path: '/services' },
-    { label: 'Contact', path: '/contact' }
-  ];
-
-  const handleNavClick = (path: string) => {
-    if (path === '/') {
-      navigate('/');
+  const handleNavClick = (id: string) => {
+    if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (path === '/services') {
-      navigate('/services');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (path === '/contact') {
-      navigate('/contact');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const isActive = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/';
-    }
-    if (path === '/services') {
-      return location.pathname.startsWith('/services') && !location.pathname.startsWith('/contact');
-    }
-    if (path === '/contact') {
-      return location.pathname === '/contact';
-    }
-    return false;
   };
 
   return (
@@ -70,7 +62,7 @@ export function Navbar() {
       >
         {/* Brand Logo & Name (Left side) */}
         <button
-          onClick={() => handleNavClick('/')}
+          onClick={() => handleNavClick('home')}
           className="flex items-center gap-3 cursor-pointer focus:outline-none group"
         >
           <Logo size={36} className="group-hover:scale-105 transition-transform duration-300" />
@@ -82,11 +74,11 @@ export function Navbar() {
         {/* Desktop Navigation (Right side) */}
         <nav className="hidden md:flex items-center gap-8 text-white">
           {navItems.map((item) => {
-            const active = isActive(item.path);
+            const active = activeSection === item.id;
             return (
               <button
                 key={item.label}
-                onClick={() => handleNavClick(item.path)}
+                onClick={() => handleNavClick(item.id)}
                 className={`relative cursor-pointer text-xs sm:text-sm uppercase tracking-wider transition-colors py-2 px-1 ${
                   active ? 'text-cyan-400 font-semibold' : 'text-neutral-400 hover:text-white'
                 }`}
@@ -125,13 +117,13 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-4">
               {navItems.map((item) => {
-                const active = isActive(item.path);
+                const active = activeSection === item.id;
                 return (
                   <button
                     key={item.label}
                     onClick={() => {
                       setIsMobileMenuOpen(false);
-                      handleNavClick(item.path);
+                      handleNavClick(item.id);
                     }}
                     className={`text-left text-base font-semibold uppercase tracking-wider transition-colors py-2 border-b border-white/5 ${
                       active ? 'text-cyan-400' : 'text-neutral-300 hover:text-white'

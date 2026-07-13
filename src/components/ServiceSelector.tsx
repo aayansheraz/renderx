@@ -2,17 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Check } from 'lucide-react';
 
-interface ServiceSelectorProps {
-  onConfirm: (selectedService: string) => void;
-}
-
-export function ServiceSelector({ onConfirm }: ServiceSelectorProps) {
+export function ServiceSelector() {
   const [service, setService] = useState<string | null>(null);
   const options = [
-    'Web Development',
+    'Graphic Design',
+    'Branding',
     'Video Editing',
-    'Graphic Designing',
-    'AI Automations'
+    'Web & App Development',
+    'Performance Marketing'
   ];
 
   const toggleService = (option: string) => {
@@ -91,13 +88,15 @@ export function ServiceSelector({ onConfirm }: ServiceSelectorProps) {
                     </span>
                   </span>
                 </div>
-                <button
-                  onClick={() => onConfirm(service)}
-                  className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors uppercase text-[11px] sm:text-xs font-bold tracking-widest bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2.5 rounded-xl cursor-pointer shadow-xs whitespace-nowrap"
+                <a
+                  href={`https://wa.me/923413689771?text=${encodeURIComponent(`Hi RenderX, I'm interested in your ${service} services!`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors uppercase text-[11px] sm:text-xs font-bold tracking-widest bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2.5 rounded-xl cursor-pointer shadow-xs whitespace-nowrap decoration-transparent"
                 >
                   Let's Go
                   <span className="text-sm">→</span>
-                </button>
+                </a>
               </div>
             </motion.div>
           )}

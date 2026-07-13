@@ -1,46 +1,26 @@
-import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Check, Mail, Send, Phone, MapPin } from 'lucide-react';
+import { Check, Mail, Send, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 export function ContactPage() {
-  const [searchParams] = useSearchParams();
-
-  // Extract pre-selected service from URL queries, e.g. ?service=web-development
-  const serviceQuery = searchParams.get('service') || '';
-
   const serviceOptions = [
-    'Web Development',
+    'Graphic Design',
+    'Branding',
     'Video Editing',
-    'Graphic Designing',
-    'AI Automations',
+    'Web & App Development',
+    'Performance Marketing',
     'Other'
   ];
 
-  // Map slug back to label
-  const slugToLabelMap: Record<string, string> = {
-    'web-development': 'Web Development',
-    'video-editing': 'Video Editing',
-    'graphic-designing': 'Graphic Designing',
-    'ai-automations': 'AI Automations'
-  };
-
-  const initialService = slugToLabelMap[serviceQuery.toLowerCase()] || 'Web Development';
-
   // Form states
-  const [formData, setFormData] = useState({ name: '', email: '', service: initialService, message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: 'Web & App Development',
+    message: ''
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  // Sync selected service if query param changes
-  useEffect(() => {
-    if (serviceQuery) {
-      const matched = slugToLabelMap[serviceQuery.toLowerCase()];
-      if (matched) {
-        setFormData((prev) => ({ ...prev, service: matched }));
-      }
-    }
-  }, [serviceQuery]);
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +30,7 @@ export function ContactPage() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
-      setFormData({ name: '', email: '', service: 'Web Development', message: '' });
+      setFormData({ name: '', email: '', service: 'Web & App Development', message: '' });
       setTimeout(() => setSubmitSuccess(false), 5000);
     }, 1500);
   };
@@ -100,14 +80,16 @@ export function ContactPage() {
         <div className="lg:col-span-5 flex flex-col gap-6">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-xs font-semibold uppercase tracking-widest bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent w-fit"
           >
             Contact RenderX
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight"
           >
@@ -115,7 +97,8 @@ export function ContactPage() {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ delay: 0.2 }}
             className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-md"
           >
@@ -124,23 +107,40 @@ export function ContactPage() {
 
           {/* Agency Details */}
           <div className="flex flex-col gap-4 mt-6">
-            <div className="flex items-center gap-3 text-neutral-300">
-              <div className="p-2.5 bg-white/5 border border-white/10 rounded-xl">
+            <a
+              href="mailto:renderxmotion@gmail.com"
+              className="flex items-center gap-3 text-neutral-300 hover:text-fuchsia-300 transition-colors group w-fit decoration-transparent"
+            >
+              <div className="p-2.5 bg-white/5 border border-white/10 rounded-xl group-hover:scale-105 transition-transform">
                 <Mail className="w-5 h-5 text-fuchsia-400" />
               </div>
-              <span className="text-sm font-medium">hello@renderx.agency</span>
-            </div>
-            <div className="flex items-center gap-3 text-neutral-300">
-              <div className="p-2.5 bg-white/5 border border-white/10 rounded-xl">
+              <span className="text-sm font-medium">renderxmotion@gmail.com</span>
+            </a>
+            <a
+              href="tel:+923413689771"
+              className="flex items-center gap-3 text-neutral-300 hover:text-purple-300 transition-colors group w-fit decoration-transparent"
+            >
+              <div className="p-2.5 bg-white/5 border border-white/10 rounded-xl group-hover:scale-105 transition-transform">
                 <Phone className="w-5 h-5 text-purple-400" />
               </div>
-              <span className="text-sm font-medium">+1 (555) 019-2831</span>
-            </div>
+              <span className="text-sm font-medium">+92 341 3689771</span>
+            </a>
+            <a
+              href="https://wa.me/923413689771?text=Hi%20RenderX,%20I'm%20interested%20in%20working%20with%20you!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-neutral-300 hover:text-emerald-300 transition-colors group w-fit decoration-transparent"
+            >
+              <div className="p-2.5 bg-white/5 border border-white/10 rounded-xl group-hover:scale-105 transition-transform">
+                <MessageCircle className="w-5 h-5 text-emerald-400" />
+              </div>
+              <span className="text-sm font-medium">Chat on WhatsApp</span>
+            </a>
             <div className="flex items-center gap-3 text-neutral-300">
               <div className="p-2.5 bg-white/5 border border-white/10 rounded-xl">
                 <MapPin className="w-5 h-5 text-cyan-400" />
               </div>
-              <span className="text-sm font-medium">San Francisco, California</span>
+              <span className="text-sm font-medium">Lahore, Pakistan</span>
             </div>
           </div>
         </div>
@@ -148,7 +148,8 @@ export function ContactPage() {
         {/* Contact Form Card */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.15 }}
           className="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden"
         >
@@ -218,23 +219,34 @@ export function ContactPage() {
               />
             </div>
 
-            <button
-              type="submit"
-              disabled={isSubmitting || submitSuccess}
-              className="mt-2 w-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:opacity-95 text-white font-semibold py-3.5 rounded-xl text-xs uppercase tracking-widest cursor-pointer flex justify-center items-center gap-2 shadow-lg shadow-fuchsia-500/10 transition-all duration-300 disabled:opacity-50"
-            >
-              {isSubmitting ? (
-                <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
-              ) : submitSuccess ? (
-                <>
-                  <Check className="w-4 h-4" /> Inquiry Received!
-                </>
-              ) : (
-                <>
-                  <Send className="w-4.5 h-4.5" /> Submit Inquiry
-                </>
-              )}
-            </button>
+            <div className="mt-2 flex flex-col sm:flex-row gap-4 w-full">
+              <button
+                type="submit"
+                disabled={isSubmitting || submitSuccess}
+                className="w-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 hover:opacity-95 text-white font-semibold py-3.5 rounded-xl text-xs uppercase tracking-widest cursor-pointer flex justify-center items-center gap-2 shadow-lg shadow-fuchsia-500/10 transition-all duration-300 disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />
+                ) : submitSuccess ? (
+                  <>
+                    <Check className="w-4 h-4" /> Inquiry Received!
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4.5 h-4.5" /> Submit Inquiry
+                  </>
+                )}
+              </button>
+
+              <a
+                href="https://wa.me/923413689771?text=Hi%20RenderX,%20I'd%20like%20to%20inquire%20about%20a%20project!"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-3.5 rounded-xl text-xs uppercase tracking-widest cursor-pointer flex justify-center items-center gap-2 shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition-all duration-300 decoration-transparent"
+              >
+                <MessageCircle className="w-4.5 h-4.5" /> WhatsApp Inquiry
+              </a>
+            </div>
           </form>
 
           {/* Glowing bottom line decoration */}
