@@ -76,7 +76,7 @@ export function ServicesPage() {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 py-24 sm:py-32 flex flex-col gap-16 relative z-10 text-white">
+    <div className="w-full max-w-7xl mx-auto px-6 pt-12 sm:pt-16 pb-16 sm:pb-24 flex flex-col gap-16 relative z-10 text-white">
       {/* Services Header */}
       <div className="max-w-2xl flex flex-col gap-4">
         <motion.span

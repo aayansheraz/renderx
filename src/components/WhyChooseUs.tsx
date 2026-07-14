@@ -36,7 +36,7 @@ export function WhyChooseUs() {
   ];
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 py-24 sm:py-32 flex flex-col gap-12 relative z-10 text-white">
+    <div className="w-full max-w-7xl mx-auto px-6 py-16 sm:py-24 flex flex-col gap-12 relative z-10 text-white">
       <div className="max-w-2xl flex flex-col gap-4">
         <motion.span
           initial={{ opacity: 0, y: 10 }}

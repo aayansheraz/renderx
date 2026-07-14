@@ -83,19 +83,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-neutral-500">
+        <div className="pt-6 border-t border-white/5 flex items-center justify-center text-xs text-neutral-500 text-center">
           <span>© {new Date().getFullYear()} RenderX. All rights reserved.</span>
-          <span>
-            Crafted by{' '}
-            <a
-              href="https://visionnetic-tech.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-            >
-              Visionnetic Tech
-            </a>
-          </span>
         </div>
       </div>
     </footer>

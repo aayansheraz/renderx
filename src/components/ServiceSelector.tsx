@@ -65,43 +65,41 @@ export function ServiceSelector() {
       </div>
 
       {/* Feedback Status Banner */}
-      <div className="min-h-[72px] flex items-center">
-        <AnimatePresence mode="wait">
-          {service === null ? null : (
-            <motion.div
-              key="banner"
-              initial={{ height: 0, opacity: 0, y: 10 }}
-              animate={{ height: 'auto', opacity: 1, y: 0 }}
-              exit={{ height: 0, opacity: 0, y: 10 }}
-              transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-              className="overflow-hidden w-full"
-            >
-              <div className="glass-panel rounded-2xl p-4 sm:p-5 flex flex-row justify-between items-center shadow-lg shadow-fuchsia-500/2">
-                <div className="flex flex-col gap-1 pr-4">
-                  <span className="text-[10px] sm:text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-                    Selected Service
+      <AnimatePresence>
+        {service !== null && (
+          <motion.div
+            key="banner"
+            initial={{ height: 0, opacity: 0, marginTop: 0 }}
+            animate={{ height: 'auto', opacity: 1, marginTop: 16 }}
+            exit={{ height: 0, opacity: 0, marginTop: 0 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+            className="overflow-hidden w-full"
+          >
+            <div className="glass-panel rounded-2xl p-4 sm:p-5 flex flex-row justify-between items-center shadow-lg shadow-fuchsia-500/2">
+              <div className="flex flex-col gap-1 pr-4">
+                <span className="text-[10px] sm:text-xs uppercase tracking-wider text-cyan-400 font-semibold">
+                  Selected Service
+                </span>
+                <span className="text-xs sm:text-sm font-medium text-white">
+                  Ready to inquire about:{' '}
+                  <span className="font-semibold text-fuchsia-300">
+                    {service}
                   </span>
-                  <span className="text-xs sm:text-sm font-medium text-white">
-                    Ready to inquire about:{' '}
-                    <span className="font-semibold text-fuchsia-300">
-                      {service}
-                    </span>
-                  </span>
-                </div>
-                <a
-                  href={`https://wa.me/923413689771?text=${encodeURIComponent(`Hi RenderX, I'm interested in your ${service} services!`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors uppercase text-[11px] sm:text-xs font-bold tracking-widest bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2.5 rounded-xl cursor-pointer shadow-xs whitespace-nowrap decoration-transparent"
-                >
-                  Let's Go
-                  <span className="text-sm">→</span>
-                </a>
+                </span>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+              <a
+                href={`https://wa.me/923413689771?text=${encodeURIComponent(`Hi RenderX, I'm interested in your ${service} services!`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-cyan-400 hover:text-cyan-300 transition-colors uppercase text-[11px] sm:text-xs font-bold tracking-widest bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2.5 rounded-xl cursor-pointer shadow-xs whitespace-nowrap decoration-transparent"
+              >
+                Let's Go
+                <span className="text-sm">→</span>
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

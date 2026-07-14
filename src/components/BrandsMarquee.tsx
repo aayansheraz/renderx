@@ -5,7 +5,6 @@ const base = import.meta.env.BASE_URL;
 const brandLogos = [
   { src: `${base}logos/brand-1.png`, alt: 'Rosyribbons' },
   { src: `${base}logos/brand-2.png`, alt: 'Libbas' },
-  { src: `${base}logos/brand-3.png`, alt: 'Pakcare International' },
   { src: `${base}logos/brand-4.png`, alt: 'Peaxel' },
   { src: `${base}logos/brand-5.png`, alt: 'Pret by Abeeha' },
   { src: `${base}logos/brand-6.png`, alt: 'Ladlii' },
@@ -15,7 +14,7 @@ const brandLogos = [
 
 export function BrandsMarquee() {
   return (
-    <div className="w-full py-24 sm:py-32 relative z-10 text-white overflow-hidden">
+    <div className="w-full py-16 sm:py-24 relative z-10 text-white overflow-hidden">
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-6 mb-16 flex flex-col gap-4 items-center text-center">
         <motion.span

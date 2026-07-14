@@ -8,7 +8,7 @@ export function HeroPage() {
   return (
     <main
       id="spade-hero"
-      className="w-full max-w-7xl mx-auto px-6 flex flex-col justify-center h-screen pt-20 sm:pt-24 lg:pt-28 relative"
+      className="w-full max-w-7xl mx-auto px-6 flex flex-col justify-center min-h-[70vh] lg:min-h-[80vh] pt-32 pb-4 sm:pb-6 relative"
     >
       {/* Immersive ambient glows styled as hardware-friendly radial gradients (no slow blur filters) */}
       <motion.div

@@ -36,7 +36,7 @@ export function ContactPage() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-6 py-24 sm:py-32 flex flex-col justify-center min-h-screen relative z-10 text-white">
+    <div className="w-full max-w-7xl mx-auto px-6 py-16 sm:py-24 flex flex-col justify-center min-h-[85vh] lg:min-h-screen relative z-10 text-white">
       {/* Repeating and reversing background glows for premium atmospheric effect (radial gradient - no blur filters) */}
       <motion.div
         animate={{
