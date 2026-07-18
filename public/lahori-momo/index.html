@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lahori Momo — Authentic Momos From The Streets of Lahore</title>
+<meta name="description" content="Lahori Momo — Lahore's favourite momo stall in Johar Town. Handmade steam, fried, BBQ & loaded momos, chowmein, fries and creamy pasta. Order on WhatsApp.">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Sora:wght@500;600;700&family=Poppins:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Caveat:wght@600;700&family=Noto+Nastaliq+Urdu:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======== LOADER ======== -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <img src="assets/logo.png" alt="" class="loader-logo">
+    <p class="loader-word">Lahori <span>Momo</span></p>
+    <p class="loader-urdu">لاہوری مومو آگے — اوئے ہوئے</p>
+  </div>
+</div>
+
+<!-- ======== NAVBAR ======== -->
+<header id="navbar">
+  <a class="nav-logo" href="#home">
+    <img src="assets/logo.png" alt="Lahori Momo logo">
+    <span>Lahori <em>Momo</em></span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#deals">Deals</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h2l2.4 12.2a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <a class="btn btn-primary nav-order" href="#menu">Order Now</a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#menu">Menu</a>
+  <a href="#deals">Deals</a>
+  <a href="#about">About</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#visit">Visit Us</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn-primary" href="#menu">Order Now</a>
+</div>
+
+<main>
+
+<!-- ======== HERO SHOWCASE ======== -->
+<section class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker reveal" id="heroKicker">
+        <span class="kicker-dot"></span> Lahore's Favourite Momo Stall
+      </p>
+      <h1 class="hero-title reveal d1" id="heroTitle">Authentic Lahori Momos</h1>
+      <p class="hero-sub reveal d2" id="heroSub">Freshly handmade momos inspired by the vibrant streets of Lahore — steamed, fried and finished with our signature chutneys.</p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary btn-lg" id="heroOrderBtn" href="#menu">Order Now</a>
+        <a class="btn btn-ghost btn-lg" href="#menu">Explore Menu</a>
+      </div>
+      <div class="hero-badges reveal d4">
+        <div class="badge-pill">
+          <span class="stars">★★★★★</span>
+          <span><b>4.9</b> · 15.8K food lovers</span>
+        </div>
+        <div class="badge-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 16V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10"/><path d="M13 8h4l4 4v4h-2"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/><path d="M8.5 18h6.6M2 16v2h2.5"/></svg>
+          <span>Free delivery over <b>Rs 5,000</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stage reveal d2">
+      <div class="hero-glow" id="heroGlow"></div>
+      <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="slang-badge" id="heroSlang">“Oye Hoye!”</span>
+      <img class="hero-stall" id="heroStall" src="assets/stall-momos.png" alt="Lahori Momo premium food stall">
+      <span class="urdu-chip" aria-hidden="true">لاہوری مومو آگے</span>
+    </div>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="hero-tabs reveal d4" id="heroTabs" role="tablist" aria-label="Featured stalls">
+    <button class="hero-tab active" data-slide="momos" role="tab" aria-selected="true"><span>🥟</span> Lahori Momos</button>
+    <button class="hero-tab" data-slide="chowmein" role="tab" aria-selected="false"><span>🍜</span> Chowmein</button>
+    <button class="hero-tab" data-slide="fries" role="tab" aria-selected="false"><span>🍟</span> Fries</button>
+    <button class="hero-tab" data-slide="pasta" role="tab" aria-selected="false"><span>🍝</span> Pasta</button>
+    <button class="hero-tab" data-slide="drinks" role="tab" aria-selected="false"><span>🥤</span> Drinks</button>
+    <button class="hero-tab" data-slide="deals" role="tab" aria-selected="false"><span>🎉</span> Deals</button>
+  </div>
+</section>
+
+<!-- ======== MARQUEE ======== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- ======== WHY CHOOSE US ======== -->
+<section class="why" id="about">
+  <div class="section-head">
+    <p class="kicker reveal">Why Lahori Momo</p>
+    <h2 class="reveal d1">Street Soul.<br><span>Café Standards.</span></h2>
+    <p class="section-sub reveal d2">A small stall in Johar Town with a big obsession — every momo folded by hand, every chutney ground fresh, every order packed like a gift.</p>
+  </div>
+  <div class="why-grid">
+    <article class="why-card reveal">
+      <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-4.4 0-8 2.6-8 6.5 0 1.8.8 3.3 2 4.5h12c1.2-1.2 2-2.7 2-4.5C20 5.6 16.4 3 12 3Z"/><path d="M4 17h16M6 21h12"/><path d="M9 7c.8-.6 2-1 3-1"/></svg></div>
+      <h3>Handmade Daily</h3>
+      <p>Dough rolled and folded fresh every single morning. Nothing frozen, nothing shortcut — sirf mehnat.</p>
+    </article>
+    <article class="why-card reveal d1">
+      <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.2-.2-4.2 2-5 -.5 2 .5 3 1.5 4 1.3 1.3 2.5 2.8 2.5 5a4 4 0 0 1-8 0Z"/><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5"/><path d="M12 22a7 7 0 0 1-7-7c0-2 1-3.9 3-5.5"/></svg></div>
+      <h3>12+ Signature Flavours</h3>
+      <p>From classic steam to kurkure, jhol and flaming hot — momos you won't find anywhere else in Lahore.</p>
+    </article>
+    <article class="why-card reveal d2">
+      <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4.5-3.5 8-6.9 8-11a8 8 0 1 0-16 0c0 4.1 3.5 7.5 8 11Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <h3>Fresh From The Stall</h3>
+      <p>Made to order at our Johar Town stall and handed over garam-garam — steam still rising.</p>
+    </article>
+    <article class="why-card reveal d3">
+      <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <h3>15.8K Strong Family</h3>
+      <p>Loved by Lahore's food community on Instagram — the line at the stall speaks for itself.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ======== EXPLORE MENU ======== -->
+<section class="menu-sec" id="menu">
+  <div class="section-head">
+    <p class="kicker reveal">Explore The Menu</p>
+    <h2 class="reveal d1">Folded With <span>Pyaar.</span></h2>
+    <p class="section-sub reveal d2">Every plate is 6 pieces of pure Lahori happiness. Add to your dhaba basket and checkout on WhatsApp.</p>
+  </div>
+  <div class="menu-tabs reveal d2" id="menuTabs"></div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- ======== BEST SELLERS ======== -->
+<section class="best" id="best">
+  <div class="section-head">
+    <p class="kicker light reveal">Best Sellers</p>
+    <h2 class="light reveal d1">The Stall <span>Legends.</span></h2>
+    <p class="section-sub light reveal d2">The plates that built our name — ordered again and again, every single day.</p>
+  </div>
+  <div class="best-grid" id="bestGrid"></div>
+</section>
+
+<!-- ======== DEALS ======== -->
+<section class="deals" id="deals">
+  <div class="section-head">
+    <p class="kicker reveal">Today's Deals</p>
+    <h2 class="reveal d1">Platters Banao,<br><span>Party Banao.</span></h2>
+    <p class="section-sub reveal d2">Curated boxes for one, for two, for the whole squad. Free delivery on orders above Rs 5,000.</p>
+  </div>
+  <div class="deals-grid" id="dealsGrid"></div>
+  <div class="free-delivery reveal">
+    <span class="fd-drum" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 16V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v10"/><path d="M13 8h4l4 4v4h-2"/><circle cx="6.5" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/><path d="M8.5 18h6.6M2 16v2h2.5"/></svg>
+    </span>
+    <p><b>Free Delivery</b> on all orders above Rs 5,000 — dhol bajao, order karao!</p>
+  </div>
+</section>
+
+<!-- ======== GALLERY ======== -->
+<section class="gallery" id="gallery">
+  <div class="section-head">
+    <p class="kicker reveal">Food Gallery</p>
+    <h2 class="reveal d1">Straight From <span>The Stall.</span></h2>
+  </div>
+  <div class="gallery-grid">
+    <figure class="g-card reveal"><img src="assets/stall-momos.png" alt="Lahori Momos stall" loading="lazy"><figcaption>Lahori Momos</figcaption></figure>
+    <figure class="g-card reveal d1"><img src="assets/stall-chowmein.png" alt="Lahori Chowmein stall" loading="lazy"><figcaption>Wok-Tossed Chowmein</figcaption></figure>
+    <figure class="g-card reveal d2"><img src="assets/stall-fries.png" alt="Special Fries stall" loading="lazy"><figcaption>Special Fries</figcaption></figure>
+    <figure class="g-card reveal"><img src="assets/stall-pasta.png" alt="Creamy Pasta stall" loading="lazy"><figcaption>Creamy Pasta</figcaption></figure>
+    <figure class="g-card reveal d1"><img src="assets/stall-drinks.png" alt="Fresh Drinks stall" loading="lazy"><figcaption>Fresh Drinks</figcaption></figure>
+    <figure class="g-card reveal d2"><img src="assets/stall-deals.png" alt="Family Deals stall" loading="lazy"><figcaption>Family Deals</figcaption></figure>
+  </div>
+</section>
+
+<!-- ======== VISIT US ======== -->
+<section class="visit" id="visit">
+  <div class="visit-inner">
+    <div class="visit-info">
+      <p class="kicker reveal">Visit Our Stall</p>
+      <h2 class="reveal d1">Johar Town,<br><span>Milte Hain.</span></h2>
+      <p class="section-sub left reveal d2">Find us at the stall — steam rising, dhol on the speaker, chutney on the side. Ya ghar baithe WhatsApp par order karo.</p>
+      <ul class="visit-list">
+        <li class="reveal d2">
+          <span class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4.5-3.5 8-6.9 8-11a8 8 0 1 0-16 0c0 4.1 3.5 7.5 8 11Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Location</b><p>Johar Town, 80 K — Lahore, Pakistan</p></div>
+        </li>
+        <li class="reveal d3">
+          <span class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><b>Timings</b><p>Open daily · 4:00 PM – 12:00 AM</p></div>
+        </li>
+        <li class="reveal d4">
+          <span class="v-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+          <div><b>WhatsApp Orders</b><p><a href="https://wa.me/923177677686">0317-7677686</a></p></div>
+        </li>
+      </ul>
+      <div class="visit-cta reveal d4">
+        <a class="btn btn-primary btn-lg" href="https://maps.app.goo.gl/q7Y4hnjHhxUWKCFF6?g_st=aw" target="_blank" rel="noopener">Get Directions</a>
+        <a class="btn btn-ghost btn-lg" href="https://wa.me/923177677686" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="visit-map reveal d2">
+      <iframe title="Lahori Momo location — Johar Town, Lahore" src="https://maps.google.com/maps?q=Johar%20Town%20Block%2080%20Lahore&t=&z=14&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <a class="map-overlay-link" href="https://maps.app.goo.gl/q7Y4hnjHhxUWKCFF6?g_st=aw" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== REVIEWS ======== -->
+<section class="reviews" id="reviews">
+  <div class="section-head">
+    <p class="kicker reveal">Reviews</p>
+    <h2 class="reveal d1">Lahore Ka <span>Pyaar.</span></h2>
+  </div>
+  <div class="reviews-grid">
+    <article class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <p>“Kurkure momos are on another level. Crunchy outside, juicy inside — better than anything I've had on food street.”</p>
+      <div class="review-who"><span class="avatar" style="--a:#DFAF2B">A</span><div><b>Areeba K.</b><span>Johar Town</span></div></div>
+    </article>
+    <article class="review-card reveal d1">
+      <div class="stars">★★★★★</div>
+      <p>“Ordered the Dosti Deal for a hostel night — packaging was so clean it felt like a premium café, taste was pure desi. Oye hoye indeed.”</p>
+      <div class="review-who"><span class="avatar" style="--a:#B14A2D">H</span><div><b>Hamza R.</b><span>Model Town</span></div></div>
+    </article>
+    <article class="review-card reveal d2">
+      <div class="stars">★★★★★</div>
+      <p>“The lahori special momo with momo chutney is a must. Small stall, big flavour — you can tell everything is made fresh.”</p>
+      <div class="review-who"><span class="avatar" style="--a:#667A3E">M</span><div><b>Mahnoor S.</b><span>Wapda Town</span></div></div>
+    </article>
+  </div>
+</section>
+
+<!-- ======== INSTAGRAM ======== -->
+<section class="insta" id="insta">
+  <div class="insta-card reveal">
+    <div class="insta-left">
+      <span class="insta-ring"><img src="assets/logo.png" alt="Lahori Momo on Instagram"></span>
+      <div>
+        <b>@lahorimomo</b>
+        <p>598 posts · <b>15.8K followers</b> — daily stall stories, new flavours & deals first.</p>
+      </div>
+    </div>
+    <div class="insta-actions">
+      <a class="btn btn-dark" href="https://www.instagram.com/lahorimomo" target="_blank" rel="noopener">Follow on Instagram</a>
+      <a class="btn btn-ghost" href="https://www.tiktok.com/@lahorimomo" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+  <div class="insta-strip">
+    <a class="insta-tile reveal" href="https://www.instagram.com/lahorimomo" target="_blank" rel="noopener"><img src="assets/stall-momos.png" alt="" loading="lazy"><span>#OyeHoye</span></a>
+    <a class="insta-tile reveal d1" href="https://www.instagram.com/lahorimomo" target="_blank" rel="noopener"><img src="assets/stall-fries.png" alt="" loading="lazy"><span>#FullLoaded</span></a>
+    <a class="insta-tile reveal d2" href="https://www.instagram.com/lahorimomo" target="_blank" rel="noopener"><img src="assets/stall-chowmein.png" alt="" loading="lazy"><span>#SlurpKaro</span></a>
+    <a class="insta-tile reveal d3" href="https://www.instagram.com/lahorimomo" target="_blank" rel="noopener"><img src="assets/stall-deals.png" alt="" loading="lazy"><span>#PartyBanao</span></a>
+  </div>
+</section>
+
+<!-- ======== FAQ ======== -->
+<section class="faq" id="faq">
+  <div class="section-head">
+    <p class="kicker reveal">FAQ</p>
+    <h2 class="reveal d1">Sawaal? <span>Jawaab.</span></h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item reveal">
+      <summary>How do I place an order? <span class="faq-plus"></span></summary>
+      <p>Add your favourites to the basket and tap “Checkout on WhatsApp” — your order arrives to us as a ready message on 0317-7677686. Confirm your address and we start folding.</p>
+    </details>
+    <details class="faq-item reveal d1">
+      <summary>Do you deliver? What about delivery charges? <span class="faq-plus"></span></summary>
+      <p>Yes — we deliver across Lahore via rider. Delivery is <b>free on orders above Rs 5,000</b>; below that, standard rider charges apply depending on your area.</p>
+    </details>
+    <details class="faq-item reveal d2">
+      <summary>Are your momos halal? <span class="faq-plus"></span></summary>
+      <p>100%. All our chicken is sourced fresh daily from certified halal suppliers, and everything is prepared in-house at our stall.</p>
+    </details>
+    <details class="faq-item reveal d3">
+      <summary>Can you cater parties and events? <span class="faq-plus"></span></summary>
+      <p>Bilkul! Our Party Box feeds a crowd, and for bigger events we do custom platters. Message us on WhatsApp and we'll plan it together.</p>
+    </details>
+    <details class="faq-item reveal d4">
+      <summary>Where exactly is the stall? <span class="faq-plus"></span></summary>
+      <p>Johar Town, Block 80 K, Lahore. Tap “Get Directions” in the Visit Us section — Google Maps will bring you straight to the steam.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ======== FINAL CTA ======== -->
+<section class="final-cta">
+  <div class="steam big" aria-hidden="true"><i></i><i></i><i></i></div>
+  <p class="kicker light reveal">Bhook Lagi?</p>
+  <h2 class="light reveal d1">Momos Are Calling.</h2>
+  <p class="final-sub reveal d2">لاہوری مومو آگے — اوئے ہوئے!</p>
+  <a class="btn btn-primary btn-lg reveal d3" href="https://wa.me/923177677686?text=Assalam%20o%20Alaikum!%20I%20want%20to%20order%20from%20Lahori%20Momo%20%F0%9F%A5%9F" target="_blank" rel="noopener">Order on WhatsApp</a>
+</section>
+
+</main>
+
+<!-- ======== FOOTER ======== -->
+<footer id="contact">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a class="nav-logo" href="#home"><img src="assets/logo.png" alt="Lahori Momo logo"><span>Lahori <em>Momo</em></span></a>
+      <p class="foot-urdu">لاہوری مومو آگے — اوئے ہوئے</p>
+      <p class="foot-tag">Best momos in Lahore. Handmade daily at our Johar Town stall.</p>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/lahorimomo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.tiktok.com/@lahorimomo" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3v9.8a4 4 0 1 1-3.2-3.9"/><path d="M15 3c.4 2.6 2.2 4.6 5 5"/></svg></a>
+        <a href="https://wa.me/923177677686" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 5 16A8.5 8.5 0 1 1 8.4 19Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .5a4.2 4.2 0 0 1-1.5-1.5l.5-1-1-2Z"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-col">
+      <b>Explore</b>
+      <a href="#menu">Menu</a>
+      <a href="#deals">Deals</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="foot-col">
+      <b>Visit</b>
+      <p>Johar Town, 80 K<br>Lahore, Pakistan</p>
+      <a href="https://maps.app.goo.gl/q7Y4hnjHhxUWKCFF6?g_st=aw" target="_blank" rel="noopener">Get Directions ↗</a>
+    </div>
+    <div class="foot-col">
+      <b>Order</b>
+      <p>Daily · 4 PM – 12 AM</p>
+      <a href="https://wa.me/923177677686">WhatsApp: 0317-7677686</a>
+    </div>
+  </div>
+  <p class="foot-note">© <span id="year"></span> Lahori Momo · Johar Town, Lahore — Made with pyaar 🤍</p>
+</footer>
+
+<!-- ======== CART DRAWER ======== -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your basket">
+  <div class="cart-head">
+    <div>
+      <b>Your Dhaba Basket</b>
+      <span id="cartHeadCount">0 items</span>
+    </div>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot" id="cartFoot">
+    <div class="fd-progress">
+      <p id="fdText">Add Rs 5,000 for free delivery</p>
+      <div class="fd-bar"><span id="fdFill"></span></div>
+    </div>
+    <div class="cart-total-row"><span>Subtotal</span><b id="cartTotal">Rs 0</b></div>
+    <button class="btn btn-wa btn-lg" id="checkoutBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 5 16A8.5 8.5 0 1 1 8.4 19Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .5a4.2 4.2 0 0 1-1.5-1.5l.5-1-1-2Z"/></svg>
+      Checkout on WhatsApp
+    </button>
+    <p class="cart-note">Your order opens as a ready WhatsApp message — confirm your address & we start folding.</p>
+  </div>
+</aside>
+
+<!-- Floating WhatsApp -->
+<a class="wa-float" href="https://wa.me/923177677686?text=Assalam%20o%20Alaikum!%20I%20want%20to%20order%20from%20Lahori%20Momo%20%F0%9F%A5%9F" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5 5 16A8.5 8.5 0 1 1 8.4 19Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .5a4.2 4.2 0 0 1-1.5-1.5l.5-1-1-2Z"/></svg>
+</a>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
