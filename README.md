@@ -1,58 +1,75 @@
-# RenderX — Premium Creative Agency
+# RenderX — Premium Creative Agency Website
 
-**[Live demo →](https://aayansheraz.github.io/renderx/)**
+[![CI Build](https://github.com/aayansheraz/renderx/actions/workflows/ci.yml/badge.svg)](https://github.com/aayansheraz/renderx/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Interactive_Site-00C853?style=flat&logo=vercel)](https://aayansheraz.github.io/renderx/)
+[![React 19](https://img.shields.io/badge/React_19-blue?style=flat&logo=react)](https://react.dev/)
+[![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_v4-38BDF8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
 
-![RenderX screenshot](.github/screenshot.png)
+**[🚀 View Live Production Site →](https://aayansheraz.github.io/renderx/)**
 
-A single-page landing site for a creative/design agency: a background-video hero with a gradient typewriter headline, a services showcase, a rotating client-logo marquee, a "why choose us" section, and a contact form — all on one smooth-scrolling page.
+![RenderX Screenshot](.github/screenshot.png)
 
-Built with **React 19 + TypeScript + Vite + Tailwind CSS v4 + Framer Motion (via `motion/react`)**.
+RenderX is a high-converting, single-page web application engineered for a modern creative design agency. It features a full-screen background video hero with a gradient typewriter headline, an interactive service picker with pre-filled WhatsApp inquiry routing, an infinite brand logo marquee, and scroll-triggered animations powered by Framer Motion.
 
-## Highlights
+Built with **React 19 + TypeScript + Vite + Tailwind CSS v4 + Motion (`motion/react`)**.
 
-- Full-screen video hero with an animated gradient typewriter headline
-- Service picker that opens WhatsApp with a prewritten inquiry for the selected service
-- Infinite auto-rotating brand logo marquee (pauses on hover)
-- Scroll-spy navbar that smooth-scrolls to each section
-- Section reveals animated on scroll with Motion
-- 100% static output — deploys to any static host
+---
 
-## Run locally
+## 🌟 Key Features & Architectural Highlights
 
-```bash
-npm install
-npm run dev      # http://localhost:5173
+- **Video Hero & Gradient Typewriter:** Full-screen background video rendering with custom CSS gradient masking and a typewriter effect.
+- **Service Selector & Direct Conversion Flow:** Interactive service selector that dynamically formats and routes inquiry payloads to WhatsApp / Web3Forms.
+- **Infinite Brand Logo Marquee:** 60fps CSS GPU-accelerated marquee with hover pause interaction.
+- **Scroll-Spy Navigation:** Active section detection with smooth-scroll positioning.
+- **Automated CI/CD:** Continuous Integration GitHub Action workflow for zero-downtime static builds.
+
+---
+
+## 🛠️ Project Architecture
+
+```
+src/
+├── App.tsx                       # Root layout & state provider
+├── components/
+│   ├── Navbar.tsx                # Active scroll-spy navigation header
+│   ├── BackgroundVideo.tsx       # Video layer with fallback gradient overlay
+│   ├── HeroPage.tsx              # Primary landing hero section
+│   ├── ServiceSelector.tsx       # Service picker -> WhatsApp payload router
+│   ├── ServicesPage.tsx          # Service offerings grid
+│   ├── BrandsMarquee.tsx         # GPU-accelerated client logo strip
+│   ├── WhyChooseUs.tsx           # Value proposition section
+│   ├── ContactPage.tsx           # Web3Forms contact form integration
+│   ├── Footer.tsx                # Site footer & copyright
+│   └── Logo.tsx                  # Vector brand mark
+└── hooks/
+    └── useTypewriter.ts          # Custom hook for typewriter text timing
 ```
 
-## Build for hosting
+---
+
+## 💻 Local Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/aayansheraz/renderx.git
+
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev
+```
+
+---
+
+## 📦 Production Build
 
 ```bash
 npm run build
 ```
 
-Deployed automatically to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`.
+---
 
-## Structure
+## 📄 License
 
-```
-src/
-├── App.tsx                       # section layout + floating WhatsApp button
-├── components/
-│   ├── Navbar.tsx                # scroll-spy navigation
-│   ├── BackgroundVideo.tsx
-│   ├── HeroPage.tsx
-│   ├── ServiceSelector.tsx       # service pills → WhatsApp inquiry
-│   ├── ServicesPage.tsx
-│   ├── BrandsMarquee.tsx         # rotating client logo strip
-│   ├── WhyChooseUs.tsx
-│   ├── ContactPage.tsx
-│   ├── Footer.tsx
-│   └── Logo.tsx
-└── hooks/useTypewriter.ts
-```
-
-## Customising
-
-- **Services & copy** → the components under `src/components/`.
-- **Client logos** → `public/logos/` (referenced in `BrandsMarquee.tsx`).
-- **Brand colors / theme** → Tailwind config and CSS variables in `src/index.css`.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
